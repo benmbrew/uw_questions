@@ -104,10 +104,10 @@ server <- function(input, output) {
 
    
    get_text <- reactive({
-       # kw <- 'felony'
-       # cn <- 'aaa life insurance company'
-       # mw <- 0
-       # mwb <- 4
+       kw <- 'felony'
+       cn <- 'American Family Life Insurance Company'
+       mw <- 0
+       mwb <- 4
        kw <- input$keywords
        cn <- input$company_name
        mw <- input$more_words
@@ -118,7 +118,6 @@ server <- function(input, output) {
            if(cn==''){
                out <- data_frame(' '= 'No questions meet the search criteria')
            } else {
-               cn <- tolower(cn)
                sub_pdfs <- pdfs[pdfs$company == cn,]
                kw_index <- which(grepl(kw,sub_pdfs$app_text, ignore.case = T))
                index_list <- list()
@@ -159,14 +158,11 @@ server <- function(input, output) {
                datatable(out, options = list(dom = 't',lengthChange = FALSE),
                          rownames= FALSE) 
            } else {
-               names(out) <- c('Question', 'Company Name')
+               names(out) <- c('Question', 'Company Name', 'Form name', 'Year', 'URL')
                datatable(out, options = list(dom = 't',lengthChange = FALSE),
                          rownames= FALSE) 
            }
-          
        }
-       
-       
    })
 }
 

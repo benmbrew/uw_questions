@@ -5,9 +5,8 @@ account: benmbrew
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 5271278
-bundleId: 5334755
+bundleId: 5335586
 url: https://benmbrew.shinyapps.io/insurance_applications/
-when: 1638806223.88264
+when: 1638816965.77336
 asMultiple: FALSE
 asStatic: FALSE
-ignoredFiles: get_pdfs.R|parse_pdfs.R|heaps_of/competing_effects_on_the_average_age_of_infant_death.pdf
